@@ -69,4 +69,24 @@ for task in tasks: # Speaking each task sequentially from a list
 speaker.say("Have a good day!")
 ```
 
-  
+## Module the above code and keep it as a function say_tasks(tasks)
+
+```
+def say_tasks(tasks):
+	speaker.say("Good Morning!, your tasks for today are:") # Introducing the task-list
+	speaker.runAndWait()
+
+	tasks = ['Learn', 'Eat', 'Play', 'Sleep']
+
+	for task in tasks: # Speaking each task sequentially from a list
+		speaker.say(task)
+		speaker.runAndWait()
+
+	speaker.say("Have a good day!")
+
+```
+
+## Yah!! Now we have a function to say tasks. Lets move on to get tasks from your calendar
+
+Goto this link and complete the steps https://developers.google.com/calendar/api/quickstart/python
+
