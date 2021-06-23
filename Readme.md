@@ -90,3 +90,14 @@ def say_tasks(tasks):
 
 Goto this link and complete the steps https://developers.google.com/calendar/api/quickstart/python
 
+Complete Below Steps
+1. https://developers.google.com/workspace/guides/create-project#create_a_new_google_cloud_platform_gcp_project
+2. https://developers.google.com/workspace/guides/create-project#enable-api
+3. https://developers.google.com/workspace/guides/create-credentials#configure_the_oauth_consent_screen
+4. https://developers.google.com/workspace/guides/create-credentials#create_a_oauth_client_id_credential
+
+Don't forget to publish your app here https://developers.google.com/workspace/guides/create-credentials#configure_the_oauth_consent_screen
+
+Now Copy below code and paste in new file called quickstart.py
+
+https://github.com/googleworkspace/python-samples/blob/master/calendar/quickstart/quickstart.py
