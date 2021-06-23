@@ -74,6 +74,10 @@ speaker.say("Have a good day!")
 ```
 import pyttsx3
 
+
+speaker = pyttsx3.init()
+
+
 def say_tasks(tasks):
 	speaker.say("Good Morning!, your tasks for today are:") # Introducing the task-list
 	speaker.runAndWait()
