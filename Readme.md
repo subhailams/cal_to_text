@@ -72,6 +72,8 @@ speaker.say("Have a good day!")
 ## Module the above code and keep it as a function say_tasks(tasks)
 
 ```
+import pyttsx3
+
 def say_tasks(tasks):
 	speaker.say("Good Morning!, your tasks for today are:") # Introducing the task-list
 	speaker.runAndWait()
@@ -96,8 +98,13 @@ Complete Below Steps
 3. https://developers.google.com/workspace/guides/create-credentials#configure_the_oauth_consent_screen
 4. https://developers.google.com/workspace/guides/create-credentials#create_a_oauth_client_id_credential
 
+Download json file of credential from here https://developers.google.com/workspace/guides/create-credentials#create_a_oauth_client_id_credential
 Don't forget to publish your app here https://developers.google.com/workspace/guides/create-credentials#configure_the_oauth_consent_screen
 
 Now Copy below code and paste in new file called quickstart.py
 
 https://github.com/googleworkspace/python-samples/blob/master/calendar/quickstart/quickstart.py
+
+Authorize the App in your Browser
+
+
