@@ -113,4 +113,58 @@ https://github.com/googleworkspace/python-samples/blob/master/calendar/quickstar
 
 Authorize the App in your Browser
 
+```
+def get_tasks_from_calendar():
+    # source: https://developers.google.com/calendar/quickstart/python
+    """Shows basic usage of the Google Calendar API.
+    Prints the start and name of the next 10 events on the user's calendar.
+    """
+    creds = None
+    # The file token.pickle stores the user's access and refresh tokens, and is
+    # created automatically when the authorization flow completes for the first
+    # time.
+    # If modifying these scopes, delete the file token.pickle.
+    SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
+    if os.path.exists('token.pickle'):
+        with open('token.pickle', 'rb') as token:
+            creds = pickle.load(token)
+    # If there are no (valid) credentials available, let the user log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                'credentials.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+        # Save the credentials for the next run
+        with open('token.pickle', 'wb') as token:
+            pickle.dump(creds, token)
+
+    service = build('calendar', 'v3', credentials=creds)
+
+    # Call the Calendar API
+    now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
+    print('Getting the upcoming 10 events')
+    events_result = service.events().list(calendarId='primary', timeMin=now,
+                                        maxResults=10, singleEvents=True,
+                                        orderBy='startTime').execute()
+    tasks = events_result.get('items', [])
+    task_list = []
+    if not tasks:
+        print('No upcoming tasks found.')
+    for event in tasks:
+        today = str(datetime.date.today())
+        task_date = event['start'].get('dateTime', event['start'].get('date'))
+        if today in task_date:
+            task_list.append(event["summary"])
+
+    return task_list
+
+```
+
+```
+if __name__ == '__main__':
+    tasks = get_tasks_from_calendar()
+    say_tasks(tasks, name="Lucas") 
+```
 
