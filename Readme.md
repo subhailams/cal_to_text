@@ -92,7 +92,9 @@ def say_tasks(tasks):
 
 ```
 
-## Yah!! Now we have a function to say tasks. Lets move on to get tasks from your calendar
+Yah!! Now we have a function to say tasks. Lets move on to get tasks from your calendar
+
+## Steps to create Google Console Application
 
 Goto this link and complete the steps https://developers.google.com/calendar/api/quickstart/python
 
